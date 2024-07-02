@@ -1,18 +1,19 @@
 [project]
-name = "rnn-tutorial"
-version = "0.1.0"
-description = "Add your description here"
 dependencies = [
-    "ipykernel>=6.29.4",
+    "torch==1.10.1+cu111",
+    "torchvision==0.11.2+cu111",
+    "torchaudio==0.10.1",
     "jupyter>=1.0.0",
     "notebook>=7.2.1",
     "matplotlib>=3.9.0",
-    "numpy>=2.0.0",
+    "kaggle>=1.6.14",
     "pandas>=2.2.2",
-    "torch>=2.3.1",
 ]
+name = "rnn-tutorial"
+version = "0.1.0"
+description = "Add your description here"
 readme = "README.md"
-requires-python = ">= 3.8"
+requires-python = ">= 3.9"
 
 [build-system]
 requires = ["hatchling"]
@@ -20,10 +21,15 @@ build-backend = "hatchling.build"
 
 [tool.rye]
 managed = true
-dev-dependencies = []
+dev-dependencies = ["setuptools==69.5.1", "packaging>=24.1"]
 
 [tool.hatch.metadata]
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/rnn_tutorial"]
+
+[[tool.rye.sources]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/torch_stable.html"
+type = "find-links"
