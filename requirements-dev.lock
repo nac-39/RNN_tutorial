@@ -186,10 +186,11 @@ notebook==7.2.1
 notebook-shim==0.2.4
     # via jupyterlab
     # via notebook
-numpy==2.0.0
+numpy==1.26.4
     # via contourpy
     # via matplotlib
     # via pandas
+    # via rnn-tutorial
     # via torchvision
 overrides==7.7.0
     # via jupyter-server
