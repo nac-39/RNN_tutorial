@@ -10,3 +10,7 @@ wheels/
 .venv
 *.zip
 data/*
+
+# pytorchのモデル
+*.pt
+*.pth
