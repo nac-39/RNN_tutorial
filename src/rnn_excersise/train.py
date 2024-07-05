@@ -22,7 +22,7 @@ class Train:
 
     # オプティマイザを定義（例：SGDオプティマイザ）
 
-    def train(self, category_tensor, line_tensor):
+    def train(self, category_tensor, line_tensor, max_norm):
         hidden = self.rnn.initHidden()
 
         self.rnn.zero_grad()
@@ -35,6 +35,9 @@ class Train:
 
         loss = self.criterion(output, category_tensor)
         loss.backward()
+        torch.nn.utils.clip_grad_norm_(
+            self.rnn.parameters(), max_norm=max_norm
+        )  # max_normの値を調整
 
         # Add parameters' gradients to their values, multiplied by learning rate
         # for p in self.rnn.parameters():
@@ -56,7 +59,7 @@ class Train:
 
         return output, loss.item()
 
-    def proceed(self, retrain=False, n_iters=500000):
+    def proceed(self, retrain=False, n_iters=500000, max_norm=5.0):
         current_loss = 0
         all_losses = []
 
@@ -86,7 +89,7 @@ class Train:
                 self.data.randomTrainingExample()
             )
 
-            output, loss = self.train(category_tensor, line_tensor)
+            output, loss = self.train(category_tensor, line_tensor, max_norm)
             current_loss += loss
             if np.isnan(loss):
                 print("Loss is NaN.涙涙涙涙。。。。")
