@@ -12,6 +12,7 @@ from rnn_excersise.model import RNN
 class Train:
     print_every = 5000
     plot_every = 1000
+    model_path = "models"
 
     def __init__(self, data, device, logger, n_hidden=128, learning_rate=0.001) -> None:
         self.rnn = RNN(data.n_letters, n_hidden, data.n_genres, device).to(device)
@@ -85,7 +86,7 @@ class Train:
             # all_lossesを保存
             all_losses = torch.load("all_losses.pth")
             return model, all_losses
-        for iter in track(range(1, n_iters + 1), description="Training mosdel"):
+        for iter in track(range(1, n_iters + 1), description="Training model"):
             category, line, category_tensor, line_tensor = (
                 self.data.randomTrainingExample()
             )
@@ -113,8 +114,10 @@ class Train:
             if iter % self.plot_every == 0:
                 all_losses.append(current_loss / self.plot_every)
                 current_loss = 0
+        time_strf = time.strftime("%Y%m%d%H%M%S")
+        os.makedirs(f"{self.model_path}/{time_strf}", exist_ok=True)
         # 作成したモデルを保存
-        torch.save(self.rnn.state_dict(), "rnn.pth")
+        torch.save(self.rnn.state_dict(), f"{self.model_path}/{time_strf}/rnn.pth")
         # all_lossesを保存
-        torch.save(all_losses, "all_losses.pth")
+        torch.save(all_losses, f"{self.model_path}/{time_strf}/all_losses.pth")
         return self.rnn, all_losses
