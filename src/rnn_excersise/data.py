@@ -7,8 +7,6 @@ import torch
 
 import pandas as pd
 
-DATASET_PATH = "data"
-
 
 class DataLoader:
     def __init__(self, dataset_path, dataset_name, learning_column):

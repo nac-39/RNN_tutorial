@@ -5,7 +5,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import numpy as np
-
+from rich.progress import track
 from rnn_excersise.model import RNN
 
 
@@ -13,12 +13,13 @@ class Train:
     print_every = 5000
     plot_every = 1000
 
-    def __init__(self, data, device, n_hidden=128, learning_rate=0.001) -> None:
+    def __init__(self, data, device, logger, n_hidden=128, learning_rate=0.001) -> None:
         self.rnn = RNN(data.n_letters, n_hidden, data.n_genres, device).to(device)
         self.criterion = nn.NLLLoss()
         self.device = device
         self.optimizer = optim.SGD(self.rnn.parameters(), lr=learning_rate)
         self.data = data
+        self.logger = logger
 
     # オプティマイザを定義（例：SGDオプティマイザ）
 
@@ -74,7 +75,7 @@ class Train:
 
         # 訓練済みのモデルがあればそれを返す
         if os.path.exists("rnn.pth") and not retrain:
-            print("model exists")
+            self.logger.info("model exists")
             # モデルを保存
             model = RNN(self.data.n_letters, self.data.n_hidden, self.data.n_genres).to(
                 self.device
@@ -84,7 +85,7 @@ class Train:
             # all_lossesを保存
             all_losses = torch.load("all_losses.pth")
             return model, all_losses
-        for iter in range(1, n_iters + 1):
+        for iter in track(range(1, n_iters + 1), description="Training mosdel"):
             category, line, category_tensor, line_tensor = (
                 self.data.randomTrainingExample()
             )
@@ -92,19 +93,19 @@ class Train:
             output, loss = self.train(category_tensor, line_tensor, max_norm)
             current_loss += loss
             if np.isnan(loss):
-                print("Loss is NaN.涙涙涙涙。。。。")
-                print(f"category = {category}")
-                print(f"line = {line}")
-                print(f"category_tensor = {category_tensor}")
-                print(f"line_tensor = {line_tensor}")
-                raise ValueError("Loss is NaN.涙涙涙涙。。。。")
+                self.logger.error("Loss is NaN.")
+                self.logger.error(f"category = {category}")
+                self.logger.error(f"line = {line}")
+                self.logger.error(f"category_tensor = {category_tensor}")
+                self.logger.error(f"line_tensor = {line_tensor}")
+                raise ValueError("Loss is NaN.")
 
             # Print iter number, loss, name and guess
             if iter % self.print_every == 0:
                 guess, guess_i = self.data.categoryFromOutput(output)
                 correct = "✓" if guess == category else "✗ (%s)" % category
                 average_loss = current_loss / self.plot_every
-                print(
+                self.logger.info(
                     f"{iter} {iter / n_iters * 100}% ({timeSince(start)}) {average_loss:.4f} {line} / {guess} {correct}"
                 )
 

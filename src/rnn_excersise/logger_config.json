@@ -1,0 +1,47 @@
+{
+    "version": 1,
+    "formatters": {
+        "detailed": {
+            "class": "logging.Formatter",
+            "format": "%(asctime)s %(name)-15s %(levelname)-13s %(message)s",
+            "datefmt": "%Y-%m-%d %H:%M:%S"
+        }
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "level": "INFO",
+            "formatter": "detailed"
+        },
+        "file": {
+            "class": "logging.FileHandler",
+            "filename": "log/log.log",
+            "mode": "a",
+            "formatter": "detailed"
+        },
+        "errors": {
+            "class": "logging.FileHandler",
+            "filename": "log/log-errors.log",
+            "mode": "a",
+            "level": "ERROR",
+            "formatter": "detailed"
+        }
+    },
+    "loggers": {
+        "all": {
+            "handlers": [
+                "console",
+                "file",
+                "errors"
+            ]
+        }
+    },
+    "root": {
+        "level": "DEBUG",
+        "handlers": [
+            "console",
+            "file",
+            "errors"
+        ]
+    }
+}
