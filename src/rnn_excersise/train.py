@@ -6,15 +6,15 @@ import torch.nn as nn
 import torch.optim as optim
 import numpy as np
 
-from .model import RNN
+from rnn_excersise.model import RNN
 
 
 class Train:
     print_every = 5000
     plot_every = 1000
 
-    def __init__(self, data, device, learning_rate=0.001) -> None:
-        self.rnn = RNN()
+    def __init__(self, data, device, n_hidden=128, learning_rate=0.001) -> None:
+        self.rnn = RNN(data.n_letters, n_hidden, data.n_genres, device).to(device)
         self.criterion = nn.NLLLoss()
         self.device = device
         self.optimizer = optim.SGD(self.rnn.parameters(), lr=learning_rate)

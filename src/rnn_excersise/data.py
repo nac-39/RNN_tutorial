@@ -25,7 +25,9 @@ class DataLoader:
         if not os.path.exists(
             Path(self.dataset_path, "anime-dataset-2023.csv").resolve()
         ):
-            with zipfile.ZipFile("myanimelist-dataset.zip", "r") as zip_ref:
+            with zipfile.ZipFile(
+                Path(self.dataset_path, "myanimelist-dataset.zip").resolve(), "r"
+            ) as zip_ref:
                 zip_ref.extractall(self.dataset_path)
 
     def parse_data(self, device="cpu"):
@@ -83,7 +85,7 @@ class Data:
     def lineToTensor(self, line):
         tensor = torch.zeros(len(line), 1, self.n_letters).to(self.device)
         for li, letter in enumerate(line):
-            tensor[li][0][self.sletterToIndex(letter)] = 1
+            tensor[li][0][self.letterToIndex(letter)] = 1
         return tensor
 
     @staticmethod
