@@ -5,11 +5,13 @@ build/
 dist/
 wheels/
 *.egg-info
+*checkpoint.ipynb
 
 # venv
 .venv
 *.zip
 data/*
+**/data/*
 
 # pytorchのモデル
 *.pt
