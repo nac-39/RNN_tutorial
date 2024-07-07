@@ -14,8 +14,12 @@ class Train:
     plot_every = 1000
     model_path = "models"
 
-    def __init__(self, data, device, logger, n_hidden=128, learning_rate=0.001) -> None:
-        self.rnn = RNN(data.n_letters, n_hidden, data.n_genres, device).to(device)
+    def __init__(
+        self, data, device, logger, n_hidden=128, learning_rate=0.001, num_layers=3
+    ) -> None:
+        self.rnn = RNN(data.n_letters, n_hidden, data.n_genres, num_layers, device).to(
+            device
+        )
         self.criterion = nn.NLLLoss()
         self.device = device
         self.optimizer = optim.SGD(self.rnn.parameters(), lr=learning_rate)
