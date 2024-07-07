@@ -1,5 +1,6 @@
 import argparse
 import json
+from pathlib import Path
 from logging import getLogger, config
 import torch
 
@@ -7,15 +8,17 @@ from rnn_excersise.data import DataLoader
 from rnn_excersise.train import Train
 
 
-def get_config(path="logger_config.json"):
-    with open(path, "r") as f:
+def get_config(filename="logger_config.json"):
+    script_dir = Path(__file__).resolve().parent
+
+    with open(Path(script_dir, filename).resolve(), "r") as f:
         file = json.load(f)
         config.dictConfig(file)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--retrain", help="retrain model")
+    parser.add_argument("--retrain", help="retrain model", action="store_true")
     parser.add_argument("--n_iters", help="number of iterations")
     parser.add_argument("--learning_rate", help="learning rate")
     parser.add_argument("--num_layers", help="number of hidden layers")

@@ -45,7 +45,9 @@ def load_model(model_path, data, device):
     model = RNN(data.n_letters, 128, data.n_genres, num_layers=3, device=device).to(
         device
     )
-    model.load_state_dict(torch.load(rnn_path))
+    # strict=Falseとすると、余計な値が含まれていても無視してくれる。
+    # https://discuss.pytorch.org/t/unexpected-key-in-state-dict-bn1-num-batches-tracked/29454/7
+    model.load_state_dict(torch.load(rnn_path), strict=False)
 
     # all_lossesを保存
     all_losses = torch.load(all_losses_path)
