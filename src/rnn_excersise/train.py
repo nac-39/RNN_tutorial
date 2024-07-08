@@ -14,9 +14,13 @@ class Train:
     plot_every = 1000
     model_path = "models"
 
-    def __init__(self, data, device, logger, n_hidden=128, learning_rate=0.001) -> None:
-        self.rnn = RNN(data.n_letters, n_hidden, data.n_genres, device).to(device)
-        self.criterion = nn.NLLLoss()
+    def __init__(
+        self, data, device, logger, n_hidden=128, learning_rate=0.001, num_layers=3
+    ) -> None:
+        self.rnn = RNN(data.n_letters, n_hidden, data.n_genres, num_layers, device).to(
+            device
+        )
+        self.criterion = nn.NLLLoss(weight=data.class_weights())
         self.device = device
         self.optimizer = optim.SGD(self.rnn.parameters(), lr=learning_rate)
         self.data = data
@@ -74,18 +78,6 @@ class Train:
 
         start = time.time()
 
-        # 訓練済みのモデルがあればそれを返す
-        if os.path.exists("rnn.pth") and not retrain:
-            self.logger.info("model exists")
-            # モデルを保存
-            model = RNN(self.data.n_letters, self.data.n_hidden, self.data.n_genres).to(
-                self.device
-            )
-            model.load_state_dict(torch.load("rnn.pth"))
-
-            # all_lossesを保存
-            all_losses = torch.load("all_losses.pth")
-            return model, all_losses
         for iter in track(range(1, n_iters + 1), description="Training model"):
             category, line, category_tensor, line_tensor = (
                 self.data.randomTrainingExample()

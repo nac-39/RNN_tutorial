@@ -67,6 +67,22 @@ class Data:
     all_letters = string.ascii_letters + " .,;'"
     n_letters = len(all_letters)
 
+    # クラスの重みを計算する関数
+    def class_weights(self):
+        genres = self.anime["Genres"].str.split(", ").explode()
+        genre_counts = genres.value_counts()
+
+        # カテゴリをインデックスに変換
+        genre_index = {genre: idx for idx, genre in enumerate(genre_counts.index)}
+
+        # カテゴリをインデックスに基づいてテンソルに変換
+        genre_tensor = torch.tensor(
+            [genre_index[cat] for cat in genres], dtype=torch.long
+        )
+        class_counts = torch.bincount(genre_tensor)
+        class_weights = 1.0 / class_counts
+        return class_weights.to(self.device)
+
     # Find letter index from all_letters, e.g. "a" = 0
     @classmethod
     def letterToIndex(cls, letter):
