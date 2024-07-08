@@ -7,6 +7,8 @@
 チュートリアルを元に、アニメのタイトルからジャンルを推測することを試みたものです。
 データセットは[Anime Dataset 2023](https://www.kaggle.com/datasets/dbdmobile/myanimelist-dataset)を使っています。
 `src/rnn_excersise/notebooks/anime.ipynb`が最新のコードを実行できるノートブックになっています。
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nac-39/RNN_tutorial/blob/main/src/rnn_excersise/notebooks/anime.ipynb#scrollTo=CLxAHgVGBJkd)
+
 
 以下のコマンドでも実行することができます。`{model_id}`は訓練したモデルを保存したディレクトリ名です。
 
