@@ -1,0 +1,25 @@
+2024-07-08 11:16:50 __main__        INFO          GPU is available.
+2024-07-08 11:16:50 __main__        INFO          learning_rate: 0.0001
+2024-07-08 11:16:50 __main__        INFO          n_iters: 100000
+2024-07-08 11:16:50 __main__        INFO          max_norm: 5.0
+2024-07-08 11:16:50 __main__        INFO          num_layers: 3
+2024-07-08 11:19:36 __main__        INFO          5000 5.0% (2m 42s) 3.0935 Treasure Island: The Movie / Action ✗ (Drama)
+2024-07-08 11:22:34 __main__        INFO          10000 10.0% (5m 40s) 3.0917 Mononoke / Action ✗ (Mystery)
+2024-07-08 11:25:22 __main__        INFO          15000 15.0% (8m 28s) 3.0910 SSSS.Gridman / Action ✗ (Award Winning)
+2024-07-08 11:28:14 __main__        INFO          20000 20.0% (11m 20s) 3.0871 Fishing / Sci-Fi ✗ (Avant Garde)
+2024-07-08 11:31:13 __main__        INFO          25000 25.0% (14m 19s) 3.0900 Adventures of Little El Cid / Gourmet ✗ (Adventure)
+2024-07-08 11:33:08 __main__        INFO          30000 30.0% (16m 13s) 3.0881 Start Signal / Gourmet ✗ (UNKNOWN)
+2024-07-08 11:35:52 __main__        INFO          35000 35.0% (18m 58s) 3.0881 Baccano! Specials / Hentai ✗ (Mystery)
+2024-07-08 11:38:42 __main__        INFO          40000 40.0% (21m 48s) 3.0921 Omamori Himari / Gourmet ✗ (Ecchi)
+2024-07-08 11:41:03 __main__        INFO          45000 45.0% (24m 8s) 3.0866 I, Tsushima / Gourmet ✗ (Slice of Life)
+2024-07-08 11:43:12 __main__        INFO          50000 50.0% (26m 18s) 3.0879 Fair, then Partly Piggy / Hentai ✗ (Comedy)
+2024-07-08 11:45:48 __main__        INFO          55000 55.00000000000001% (28m 54s) 3.0864 Akudama Drive / Girls Love ✗ (Sci-Fi)
+2024-07-08 11:48:39 __main__        INFO          60000 60.0% (31m 44s) 3.0862 Other Worlds / Hentai ✗ (Romance)
+2024-07-08 11:51:24 __main__        INFO          65000 65.0% (34m 30s) 3.0856 Taisho Baseball Girls / Hentai ✗ (Sports)
+2024-07-08 11:54:34 __main__        INFO          70000 70.0% (37m 40s) 3.0892 Crest of the Stars / Hentai ✗ (Action)
+2024-07-08 11:57:34 __main__        INFO          75000 75.0% (40m 39s) 3.0891 Project A-ko: Love & Robots / Hentai ✗ (Comedy)
+2024-07-08 12:00:30 __main__        INFO          80000 80.0% (43m 35s) 3.0864 The Haunted House: The Sky Ghost VS Jormungandr / Sci-Fi ✗ (Mystery)
+2024-07-08 12:03:31 __main__        INFO          85000 85.0% (46m 36s) 3.0851 Evangelion: 3.0 You Can (Not) Redo / Hentai ✗ (Award Winning)
+2024-07-08 12:06:15 __main__        INFO          90000 90.0% (49m 21s) 3.0866 Date A Live IV / Gourmet ✗ (Action)
+2024-07-08 12:08:35 __main__        INFO          95000 95.0% (51m 41s) 3.0850 Beast City / Hentai ✓
+2024-07-08 12:11:25 __main__        INFO          100000 100.0% (54m 31s) 3.0862 Phoenix / Mystery ✗ (Sci-Fi)

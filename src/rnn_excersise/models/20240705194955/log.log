@@ -1,0 +1,43 @@
+2024-07-05 18:47:21 __main__        INFO          ----------------------------------------------------------------------------------------------------
+2024-07-05 18:47:21 __main__        INFO          GPU is available.
+2024-07-05 18:47:22 __main__        INFO          learning_rate: 0.005
+2024-07-05 18:47:22 __main__        INFO          n_iters: 1000
+2024-07-05 18:47:22 __main__        INFO          max_norm: 1.0
+2024-07-05 18:50:09 __main__        INFO          ----------------------------------------------------------------------------------------------------
+2024-07-05 18:50:10 __main__        INFO          GPU is available.
+2024-07-05 18:50:10 __main__        INFO          learning_rate: 0.005
+2024-07-05 18:50:10 __main__        INFO          n_iters: 1000
+2024-07-05 18:50:10 __main__        INFO          max_norm: 1.0
+2024-07-05 18:50:10 __main__        INFO          num_layers: 3
+2024-07-05 18:51:54 __main__        INFO          ----------------------------------------------------------------------------------------------------
+2024-07-05 18:51:55 __main__        INFO          GPU is available.
+2024-07-05 18:51:55 __main__        INFO          learning_rate: 0.005
+2024-07-05 18:51:55 __main__        INFO          n_iters: 1000
+2024-07-05 18:51:55 __main__        INFO          max_norm: 1.0
+2024-07-05 18:51:55 __main__        INFO          num_layers: 3
+2024-07-05 18:52:56 __main__        INFO          ----------------------------------------------------------------------------------------------------
+2024-07-05 18:52:57 __main__        INFO          GPU is available.
+2024-07-05 18:52:57 __main__        INFO          learning_rate: 0.005
+2024-07-05 18:52:57 __main__        INFO          n_iters: 100000
+2024-07-05 18:52:57 __main__        INFO          max_norm: 5.0
+2024-07-05 18:52:57 __main__        INFO          num_layers: 3
+2024-07-05 18:55:45 __main__        INFO          5000 5.0% (2m 44s) 3.0753 Happy-Go-Lucky Days / Girls Love ✓
+2024-07-05 18:58:40 __main__        INFO          10000 10.0% (5m 39s) 3.0639 Rainbow Fireflies / Girls Love ✗ (Romance)
+2024-07-05 19:01:28 __main__        INFO          15000 15.0% (8m 27s) 3.0364 Animation Runner Kuromi 2 / Ecchi ✗ (Drama)
+2024-07-05 19:04:16 __main__        INFO          20000 20.0% (11m 15s) 3.0340 Teekyu 5 Specials / Girls Love ✗ (Sports)
+2024-07-05 19:07:15 __main__        INFO          25000 25.0% (14m 14s) 3.0169 One Piece: The Movie / Erotica ✗ (Action)
+2024-07-05 19:10:06 __main__        INFO          30000 30.0% (17m 6s) 3.0080 Battle Doll Angelic Layer / Gourmet ✗ (Award Winning)
+2024-07-05 19:12:56 __main__        INFO          35000 35.0% (19m 55s) 3.0043 Suicide Squad x Eagle Talon / Boys Love ✗ (Sports)
+2024-07-05 19:15:46 __main__        INFO          40000 40.0% (22m 45s) 3.0079 Re:ZERO -Starting Life in Another World- / Sports ✗ (Suspense)
+2024-07-05 19:18:41 __main__        INFO          45000 45.0% (25m 40s) 3.0028 X&Y / Avant Garde ✗ (Suspense)
+2024-07-05 19:21:26 __main__        INFO          50000 50.0% (28m 25s) 2.9838 THE IDOLM@STER SideM Wakeatte Mini! / Sports ✗ (Slice of Life)
+2024-07-05 19:23:58 __main__        INFO          55000 55.00000000000001% (30m 57s) 2.9611 The Asterisk War / Gourmet ✗ (Ecchi)
+2024-07-05 19:26:43 __main__        INFO          60000 60.0% (33m 42s) 2.9308 Eddie the Fast Break / Gourmet ✗ (Sports)
+2024-07-05 19:29:40 __main__        INFO          65000 65.0% (36m 39s) 2.9516 CHOYOYU!: High School Prodigies Have It Easy Even in Another World! / Boys Love ✗ (Fantasy)
+2024-07-05 19:32:42 __main__        INFO          70000 70.0% (39m 41s) 2.9070 Zounds / Girls Love ✗ (UNKNOWN)
+2024-07-05 19:35:33 __main__        INFO          75000 75.0% (42m 32s) 2.8698 Gasaraki / Gourmet ✗ (Supernatural)
+2024-07-05 19:38:26 __main__        INFO          80000 80.0% (45m 26s) 2.9146 Given (Sequel) / Comedy ✗ (Boys Love)
+2024-07-05 19:41:22 __main__        INFO          85000 85.0% (48m 21s) 2.8775 Papillon Rose OVA / Ecchi ✓
+2024-07-05 19:44:19 __main__        INFO          90000 90.0% (51m 18s) 2.8837 Datum Point / Hentai ✗ (Award Winning)
+2024-07-05 19:47:09 __main__        INFO          95000 95.0% (54m 8s) 2.8998 Confucius / Ecchi ✗ (UNKNOWN)
+2024-07-05 19:49:55 __main__        INFO          100000 100.0% (56m 54s) 2.8673 Sandglass of Summer Colors / Erotica ✗ (Drama)

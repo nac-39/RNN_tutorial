@@ -20,7 +20,7 @@ class Train:
         self.rnn = RNN(data.n_letters, n_hidden, data.n_genres, num_layers, device).to(
             device
         )
-        self.criterion = nn.NLLLoss()
+        self.criterion = nn.NLLLoss(weight=data.class_weights())
         self.device = device
         self.optimizer = optim.SGD(self.rnn.parameters(), lr=learning_rate)
         self.data = data
